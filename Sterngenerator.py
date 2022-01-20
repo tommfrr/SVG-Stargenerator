@@ -1,14 +1,14 @@
 import math
 
-def draw_sterne(x, y, ecken):
-    ra = 100 #Radius des äußeren Kreises
-    ri = 30  #Radius des inneren Kreises
+def draw_sterne(x, y, ecken, radius):
+    ra = radius     #Radius des äußeren Kreises
+    ri = radius*0.3 #Radius des inneren Kreises
     pi = 3.141
     alpha = 2*pi/ecken/2 #Kleinster Winkel
 
     a_x = 0         #aktuelles x
     a_y = 0         #aktuelles y
-    a_alpha = alpha #aktuelles Winkel
+    a_alpha = alpha #aktueller Winkel
 
     #Erstellen des Pfades, wird im Laufe des Programms erweitert und am Schluss ausgegeben
     Pfad = "<path d=\"M " + str(x) + " " + str(y - ra) + " " #Cursor an Startposition bewegt
@@ -39,14 +39,12 @@ def draw_sterne(x, y, ecken):
     #Abschließen der Pfadanweisung
     Pfad = Pfad + "z\" />"
 
-
+    #Pfad-String wird ausgegeben
     print(Pfad)
 
 
-draw_sterne(200, 200, 5)
-draw_sterne(400, 200, 6)
-draw_sterne(600, 200, 7)
-draw_sterne(800, 200, 15)
+#Ein Aufruf der Funktion -> Stern an Punkt (200,200) mit 5 Ecken und Radius 100
+draw_sterne(200, 200, 5, 100)
 
 
 
