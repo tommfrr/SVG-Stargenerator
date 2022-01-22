@@ -37,7 +37,7 @@ def draw_sterne(x, y, ecken, radius):
         a_alpha = a_alpha + alpha
 
     #Abschließen der Pfadanweisung
-    Pfad = Pfad + "z\" fill=\"yellow\"> <animateTransform attributeName=\"transform\" type=\"rotate\" from=\"0 " + x + " " + y + "\" to=\"360 " + x + " " + y + "\"dur=\"4s\" repeatCount=\"indefinite\"/>"
+     Pfad = Pfad + "z\" fill=\"yellow\"> <animateTransform attributeName=\"transform\" type=\"rotate\" from=\"0 " + str(x) + " " + str(y) + "\" to=\"360 " + str(x) + " " + str(y) + "\"dur=\"4s\" repeatCount=\"indefinite\"/>" </path>
 
     #Pfad-String wird ausgegeben
     print(Pfad)
