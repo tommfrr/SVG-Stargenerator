@@ -1,0 +1,1 @@
+f"z\" fill=\"yellow\"> <animateTransform attributeName=\"transform\" type=\"rotate\" from=\"0 {posX} {posY}\" to=\"360 {posX} {posY}\" dur=\"4s\" repeatCount=\"indefinite\"/> </path>"

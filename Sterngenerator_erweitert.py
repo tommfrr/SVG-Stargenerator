@@ -1,6 +1,12 @@
 import math
 import random
 
+#tkinter zum auslesen von Dateien
+from tkinter import filedialog
+from tkinter import *
+
+
+
 def draw_sterne(posX, posY, ecken, radius):
     ra = radius     #Radius des äußeren Kreises
     ri = radius*0.3 #Radius des inneren Kreises
@@ -12,7 +18,7 @@ def draw_sterne(posX, posY, ecken, radius):
     a_alpha = alpha #aktueller Winkel
 
     #Erstellen des Pfades, wird im Laufe des Programms erweitert und am Schluss ausgegeben
-    Pfad = "<path d=\"M " + str(posX) + " " + str(posY - ra) + " " #Cursor an Startposition bewegt
+    pfad = "<path d=\"M " + str(posX) + " " + str(posY - ra) + " " #Cursor an Startposition bewegt
 
     #Pro Schleifendurchlauf wird String um 2 Punkte erweitert (innerer und äußerer Kreis)
     for i in range(ecken):
@@ -22,7 +28,7 @@ def draw_sterne(posX, posY, ecken, radius):
         a_y = round(-ri * math.cos(a_alpha) + posY)
 
         #Ergänzen des Pfades (Punkt am inneren Ring)
-        Pfad = Pfad + "L " + str(a_x) + " " + str(a_y) + " "
+        pfad += "L " + str(a_x) + " " + str(a_y) + " "
 
         #Winkel eine Einheit weitersetzen
         a_alpha = a_alpha + alpha 
@@ -38,13 +44,15 @@ def draw_sterne(posX, posY, ecken, radius):
         a_alpha = a_alpha + alpha
 
     #Abschließen der Pfadanweisung
-    Pfad = Pfad + "z\" fill=\"yellow\"> <animateTransform attributeName=\"transform\" type=\"rotate\" from=\"0 " + str(x) + " " + str(y) + "\" to=\"360 " + str(x) + " " + str(y) + "\" dur=\"4s\" repeatCount=\"indefinite\"/> </path>"
+    pfad += pfadEnde
 
     #Pfad-String wird ausgegeben
-    print(Pfad)
+    print(pfad)
 
 
 if __name__=="__main__":
     posX = random.randint(0,1000)
     posY = random.randint(0,500)
-    draw_sterne(posX, posY, 5, 100)
+    pfadEnde = ""
+    file = open(pfadEnde.txt) #die Datei muss sich im selben Ordner befinden  
+    draw_sterne(posX, posY, 5, 100, pfadEnde)
